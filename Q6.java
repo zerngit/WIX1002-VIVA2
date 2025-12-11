@@ -1,7 +1,31 @@
 import java.util.Scanner;
 
 public class Q6 {
+
+    
     public static boolean isMirror(int[] a, int[] b) {
+
+        int[] aRev = new int[a.length];
+
+        for (int i = 0; i < a.length; i++) {
+            aRev[i] = a[a.length-1-i];
+        }
+
+        if (aRev.length != b.length) {
+            return false;
+        }
+
+        for (int i = 0; i < aRev.length; i++) {
+            if (aRev[i] != b[i]) {
+                return false;
+            }
+        }
+
+        return true;
+        
+    }
+    
+    /*public static boolean isMirror(int[] a, int[] b) {
 
         // Convert arrays A and array B to strings
         String aStr = "";
@@ -23,7 +47,7 @@ public class Q6 {
         String aRev = new StringBuilder(aStr).reverse().toString();
         return aRev.equals(bStr);
     }
-
+    */
     public static void main(String[]args) {
         
         Scanner sc = new Scanner(System.in);
