@@ -27,10 +27,10 @@ public class V2Q5 {
         String text = sc.nextLine();
         
         if (mode == 'C'){
-            System.out.println("Result: " + compress(text));
+            System.out.println(compress(text));
         }
         else{
-            System.out.println("Result: " + decompress(text));
+            System.out.println(decompress(text));
         }
 
     }
@@ -48,7 +48,7 @@ public class V2Q5 {
             } 
         }
         compressed = compressed + count + s.charAt(s.length()-1); //append final count and final character to the compressed string 
-        return compressed;
+        return ("Result: " + compressed);
     }
     
     public static String decompress(String s){
@@ -56,7 +56,7 @@ public class V2Q5 {
             if (s.charAt(i) >= '0' && s.charAt(i) <= '9'
                 &&    
                 s.charAt(i+1) >= '0' && s.charAt(i+1) <= '9'){ //check validity (2 numbers can't be next to each other)
-                return "Invalid encoding";
+                return "Invalid encoding.";
             }    
         }
         
@@ -68,7 +68,7 @@ public class V2Q5 {
             repeated = String.valueOf(s.charAt(i+1)).repeat(count);//repeat character based on count
             decompressed = decompressed + repeated; //append repeated characters to the decompressed string
         }
-        return decompressed;
+        return ("Result: " + decompressed);
     }
     
 }
