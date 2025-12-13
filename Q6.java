@@ -54,19 +54,21 @@ public class Q6 {
         
         Scanner sc = new Scanner(System.in);
 
-        sc.useDelimiter(",|\\s+");
-
         System.out.print("Array A: ");
 
-        int [] a = new int[3];
-        for (int i = 0; i < 3; i++) {
-            a[i] = sc.nextInt();
+        String lineA = sc.nextLine();
+        String [] partsA = lineA.split(",");
+        int [] a = new int[partsA.length];
+        for (int i = 0; i < partsA.length; i++) {
+            a[i] = Integer.parseInt(partsA[i].trim());
         }
-
+        
         System.out.print("Array B: ");
-        int [] b = new int[3];
-        for (int i = 0; i < 3; i++) {
-            b[i] = sc.nextInt();
+        String lineB = sc.nextLine();
+        String [] partsB = lineB.split(",");
+        int [] b = new int[partsB.length];
+        for (int i = 0; i < partsB.length; i++) {
+            b[i] = Integer.parseInt(partsB[i].trim());
         }
 
         System.out.println("Mirror Pattern: " + isMirror(a,b));
